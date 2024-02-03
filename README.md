@@ -3,8 +3,6 @@
 
 # gh-addressed.nvim
 
-![image](https://github.com/dlvhdr/gh-addressed.nvim/assets/6196971/b700f784-7436-4895-a7b8-4da5571958e5)
-
 ## Requirements
 
 Install the `gh` CLI - see the [installation instructions](https://github.com/cli/cli#installation)
@@ -16,9 +14,14 @@ Using lazy:
 ```lua
 return {
   "dlvhdr/gh-addressed.nvim",
-  dependencies = { "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim" },
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "MunifTanjim/nui.nvim",
+    "folke/trouble.nvim",
+  },
+  cmd = "GhReviewComments",
   keys = {
-    { "<leader>gc", "<cmd>GhReviewComments<cr>", desc = "List PR Comments" },
+    { "<leader>gc", "<cmd>GhReviewComments<cr>", desc = "GitHub Review Comments" },
   },
 }
 ```
@@ -26,4 +29,4 @@ return {
 ## TODO
 
 - [ ] Handle errors
-- [ ] Prettify output with markdown parsing
+- [ ] Async
