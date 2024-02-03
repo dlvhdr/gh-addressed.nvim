@@ -26,10 +26,11 @@ M.open_comments = function(pr)
     local num_comments = #thread.comments.nodes
 
     for i, comment in ipairs(thread.comments.nodes) do
-      table.insert(qf_items, {
+      local item = {
         filename = vim.fn.getcwd() .. "/" .. thread.path,
         lnum = startLine,
         end_lnum = startLine,
+        col = i,
         type = comment.outdated and "W" or "I",
         text = string.format(
           "%s@%s (%s)%s\n  │  %s",
@@ -39,9 +40,20 @@ M.open_comments = function(pr)
           comment.outdated and " [OUTDATED]" or "",
           comment.bodyText:gsub("\n", "\n  │  ")
         ),
-      })
+      }
+      table.insert(qf_items, item)
     end
   end
+  table.sort(qf_items, function(a, b)
+    if a.filename == b.filename and a.lnum == b.lnum then
+      return a.text < b.text
+    end
+    if a.filename == b.filename then
+      return a.lnum < b.lnum
+    end
+
+    return a.filename < b.filename
+  end)
 
   local qfopts = {
     items = qf_items,
@@ -50,17 +62,5 @@ M.open_comments = function(pr)
   vim.fn.setqflist({}, "r", qfopts)
   trouble.open("quickfix")
 end
-
--- sort threads?
--- local threads = pr.reviewThreads.nodes
--- table.sort(threads, function(a, b)
---   vim.print("comparing", a.path, b.path)
---   if a.path == b.path then
---     return get_start_line(a) > get_start_line(b)
---   end
---   return a.path < b.path
--- end)
---
--- vim.print(threads)
 
 return M
