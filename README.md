@@ -3,6 +3,8 @@
 
 # gh-addressed.nvim
 
+Easily view and address comments left on your PR using [folke/trouble.nvim](https://github.com/folke/trouble.nvim)
+
 ## Requirements
 
 Install the `gh` CLI - see the [installation instructions](https://github.com/cli/cli#installation)
