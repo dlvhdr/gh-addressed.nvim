@@ -1,11 +1,12 @@
 > [!CAUTION]
-> ROUGH DRAFT - super early in development
+> Early in development
 
 # gh-addressed.nvim
 
 Easily view and address comments left on your PR using [folke/trouble.nvim](https://github.com/folke/trouble.nvim)
 
-![Capture-2024-02-05-233121](https://github.com/dlvhdr/gh-addressed.nvim/assets/6196971/3cdc9949-3cc0-45a6-9301-f72aeb8c88de)
+![image](https://github.com/dlvhdr/gh-addressed.nvim/assets/6196971/603f46ce-5b6f-429f-ba52-88ec8b982657)
+
 
 ## Requirements
 
