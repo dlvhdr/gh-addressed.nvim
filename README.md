@@ -5,7 +5,7 @@
 
 Easily view and address comments left on your PR using [folke/trouble.nvim](https://github.com/folke/trouble.nvim)
 
-![image](https://github.com/dlvhdr/gh-addressed.nvim/assets/6196971/4e089924-d25c-4723-8a06-6d888e6bf27a)
+![Capture-2024-02-05-233121](https://github.com/dlvhdr/gh-addressed.nvim/assets/6196971/3cdc9949-3cc0-45a6-9301-f72aeb8c88de)
 
 ## Requirements
 
